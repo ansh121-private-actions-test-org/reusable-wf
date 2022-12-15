@@ -3,12 +3,12 @@ name: Reusable required workflow
 on: workflow_call
       
 jobs: 
-  job-always-pass:
-    name: Succesful job
-    runs-on: ubuntu-latest
-    steps:
-      - name: Always pass
-        run: exit 0
+#   job-always-pass:
+#     name: Succesful job
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Always pass
+#         run: exit 0
 
   job-always-fail:
     name: Failing job
@@ -17,10 +17,10 @@ jobs:
      - name: Always fail
        run: exit 1
     
-#   job-to-be-skipped:
-#      if: false
-#      name: Skipped job
-#      runs-on: ubuntu-latest
-#      steps:
-#        - name: Check out repository
-#          run: echo "Hello world"
+  job-to-be-skipped:
+     if: false
+     name: Skipped job
+     runs-on: ubuntu-latest
+     steps:
+       - name: Check out repository
+         run: echo "Hello world"
