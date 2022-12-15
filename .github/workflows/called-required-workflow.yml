@@ -8,7 +8,7 @@ jobs:
 #     runs-on: ubuntu-latest
 #     steps:
 #       - name: Always pass
-        run: exit 0
+#         run: exit 0
 
   job-always-fail:
     name: Failing job
