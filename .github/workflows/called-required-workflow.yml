@@ -1,16 +1,26 @@
 name: Reusable required workflow
 
-on:
-  workflow_call:
-    inputs:
-      username:
-        required: true
-        type: string
-
-jobs:
-  example_job:
-    name: Pass input my-action
+on: workflow_call
+      
+jobs: 
+  job-always-pass:
+    name: Succesful job
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: echo Hello, ${{ inputs.username }}!
+      - name: Always pass
+        run: exit 0
+
+  job-always-fail:
+    name: Failing job
+    runs-on: ubuntu-latest
+    steps:
+     - name: Always fail
+       run: exit 1
+    
+  job-to-be-skipped:
+     if: false
+     name: Skipped job
+     runs-on: ubuntu-latest
+     steps:
+       - name: Check out repository
+         run: echo "Hello world"
