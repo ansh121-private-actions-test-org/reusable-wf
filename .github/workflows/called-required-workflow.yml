@@ -3,12 +3,12 @@ name: Reusable required workflow
 on: workflow_call
       
 jobs: 
-  job-always-pass:
-    name: Succesful job
-    runs-on: ubuntu-latest
-    steps:
-      - name: Always pass
-        run: exit 0
+#   job-always-pass:
+#     name: Succesful job
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Always pass
+#         run: exit 0
 
   job-always-fail:
     name: Failing job
